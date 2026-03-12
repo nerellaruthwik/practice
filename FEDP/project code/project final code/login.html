@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | House of Artworks</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      background: url('assets/images/banner.jpg') center/cover no-repeat;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      color: #fff;
+    }
+
+    .login-container {
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 400px;
+      margin: 8% auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: gold;
+    }
+
+    .login-container input,
+    .login-container select {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1em;
+    }
+
+    .login-container button {
+      background: gold;
+      color: black;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-container button:hover {
+      background: white;
+    }
+
+    .login-container a {
+      color: gold;
+      text-decoration: none;
+      display: block;
+      margin-top: 15px;
+    }
+
+    .login-container a:hover {
+      text-decoration: underline;
+    }
+
+    header.navbar {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header.navbar a {
+      color: gold;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <h1><a href="index.html" style="color: gold; text-decoration: none;">HOUSE OF ARTWORKS</a></h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="login-container">
+    <h2>Login to Your Account</h2>
+    <form id="loginForm">
+      <select id="role" required>
+        <option value="">Select Role</option>
+        <option value="admin">Admin</option>
+        <option value="artist">Artist</option>
+        <option value="visitor">Visitor</option>
+      </select>
+      <input type="text" id="username" placeholder="Enter your name" required />
+      <input type="password" id="password" placeholder="Enter password" required />
+      <button type="submit">Login</button>
+      <a href="index.html">← Back to Home</a>
+    </form>
+  </div>
+
+  <footer>
+    © 2025 House of Artworks | All rights reserved.
+  </footer>
+
+  <script>
+    // simple role-based redirect
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const role = document.getElementById("role").value;
+
+      if (role === "admin") {
+        window.location.href = "admin.html";
+      } else if (role === "artist") {
+        window.location.href = "artist.html";
+      } else if (role === "visitor") {
+        window.location.href = "visitor.html";
+      } else {
+        alert("Please select a role before logging in.");
+      }
+    });
+  </script>
+</body>
+</html>
