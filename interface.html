@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Art Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif; /* Serif font like the image */
+      background-color: #c2a65c; /* Slightly muted gold */
+    }
+
+    .hero {
+      position: relative;
+      padding: 80px 60px;
+      color: white;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-back {
+      width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .card-front {
+      position: absolute;
+      top: 40px;
+      left: 80px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      background-color: white;
+      overflow: hidden;
+    }
+
+    .card-front img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-front-content {
+      padding: 20px;
+      color: black;
+    }
+
+    .card-front-content h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card-front-content p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+      }
+
+      .card-front {
+        position: static;
+        width: 90%;
+        margin-top: -60px;
+      }
+
+      .card-back {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="title">Our Art Gallery</div>
+    <div class="cards">
+      <!-- Background Card -->
+      <img src="background.jpg" alt="Gallery Page Example" class="card-back">
+
+      <!-- Foreground Card -->
+      <div class="card-front">
+        <img src="background.jpg" alt="Artwork">
+        <div class="card-front-content">
+          <h2>Explore the different art gallery</h2>
+          <p>Ancient Pictures<br>
+          One of the first solo shows in the gallery's 2016 lineup.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
